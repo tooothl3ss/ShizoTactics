@@ -11,20 +11,21 @@
 class Unit {
 protected:
     std::string name = "Chort";
-    int baseHealth = 100;
-    int baseDefense = 15;
-    int baseAttackPower = 10;
-    int baseAccuracy = 80;
-    int baseAttackRange = 1;
-    
-    int health = baseHealth;
-    int defense = baseDefense;
-    int attackPower = baseAttackPower;
-    int accuracy = baseAccuracy;
-    int attackRange = baseAttackRange;
-
     std::unique_ptr<Attack> attackType;
-    std::vector<StatusEffect> statusEffects;
+    std::vector<StatusEffect> statusEffects; // Эффекты состояния
+    int health = 100;
+    int attackPower = 10; // depense on 
+    int defense = 15;
+    int lvl = 0;
+    int exp = 0; // будет обнуляться каждый лвл
+    int maxlvl = 99;
+    int gateExp = 1000; // будет увеличиваться с лвлом
+    int criticalHitChance = 25; //%%
+    int rang = 0;
+    int hitChance = 25; // будет зависить от обзора, высоты, дальности цели и лвла юнита
+    bool stunned = false; 
+    int accuracy = 1; 
+    int attackRange = 2;
 
 public:
     // Конструктор по умолчанию
